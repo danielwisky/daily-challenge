@@ -13,6 +13,9 @@ spring:
       bootstrap-servers: ${spring.kafka.bootstrap-servers}
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      #properties:
+        # max.poll.interval.ms: 5000   # Default: 300000 (5 minutes)
+        # max.poll.records: 500        # Default: 500 (0,6 seconds/message)
     producer:
       retries: 10
       bootstrap-servers: ${spring.kafka.bootstrap-servers}
