@@ -15,7 +15,7 @@ public class SendMessageInBatch {
 
   public void execute(final Integer size) {
     IntStream
-        .rangeClosed(INTEGER_ZERO, size)
+        .range(INTEGER_ZERO, size)
         .forEach(this::send);
   }
 

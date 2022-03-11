@@ -1,5 +1,6 @@
 package br.com.danielwisky.dailychallenge.domains;
 
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,4 +14,5 @@ public class Message {
 
   private String id;
   private String content;
+  private LocalDateTime creationDate;
 }
