@@ -15,7 +15,7 @@ public class MessageListener {
 
   @KafkaListener(topics = "daily-challenge.message")
   public void receive(final String message) {
-    System.out.println("Received message: " + message);
+    log.info("received message: " + message);
     processMessage.execute(message);
   }
 }
