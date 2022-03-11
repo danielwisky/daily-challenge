@@ -1,6 +1,6 @@
 package br.com.danielwisky.dailychallenge.gateways.inputs.http;
 
-import br.com.danielwisky.dailychallenge.usecases.SendInBatchMessage;
+import br.com.danielwisky.dailychallenge.usecases.SendMessageInBatch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/message")
 public class MessageController {
 
-  private final SendInBatchMessage sendInBatchMessage;
+  private final SendMessageInBatch sendMessageInBatch;
 
   @PostMapping("/send-batch/{size}")
   @ResponseStatus(HttpStatus.ACCEPTED)
   public ResponseEntity sendInBatch(@PathVariable final Integer size) {
-    sendInBatchMessage.execute(size);
+    sendMessageInBatch.execute(size);
     return ResponseEntity.accepted().build();
   }
 }
