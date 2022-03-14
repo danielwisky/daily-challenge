@@ -26,6 +26,24 @@ db.messages.aggregate([{
 });
 ```
 
+* Consultar mensagens duplicadas:
+```
+db.messages.aggregate([{
+        "$group": {
+            _id: "$content",
+            count: {
+                $sum: 1
+            }
+        }
+    },
+    {
+        $sort: {
+            'count': -1
+        }
+    }
+]);
+```
+
 * Remover todos os registros:
 ```
 db.messages.deleteMany({});
